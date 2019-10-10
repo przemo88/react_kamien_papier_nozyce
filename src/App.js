@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Submit from './submit';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="board">
+        <div className="title_row">
+          <h1 className="title">Kamień, Papier, Nożyce</h1>
+        </div>
+      </div>
+      <div className="board">
+        <div className="submit_row">
+          <Submit name="kamien"></Submit>
+          <Submit name="papier"></Submit>
+          <Submit name="nozyce"></Submit>
+        </div>
+      </div>
     </div>
   );
 }

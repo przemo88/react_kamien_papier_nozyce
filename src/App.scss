@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.board{
+    width: 100%;
+}
+
+@mixin row($h){
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #A6E0FF;
+    height: $h;
+}
+
+.title_row{
+    @include row(100px);
+}
+
+.submit_row{
+    @include row(150px);
+
+}
+
+.title{
+    color:white;
+    text-shadow:2px 2px black;
+    margin: 0 auto;
+  } 
