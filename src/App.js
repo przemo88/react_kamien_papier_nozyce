@@ -12,9 +12,9 @@ class App extends Component {
     this.test = this.test.bind(this);
   }
 
-  test = (props) => {
+  test = (id) => {
     //return <Result id={this.props.id}></Result>
-    console.log(this.props.id);
+    console.log('test');
   }
 
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
             <SubmitInfo id="papier" click={this.test}></SubmitInfo>
             <SubmitInfo id="kamien" click={this.test}></SubmitInfo>
             <SubmitInfo id="nozyce" click={this.test}></SubmitInfo>
-            <ResultInfo></ResultInfo>
+            <ResultInfo id={this.test}></ResultInfo>
           </div>
         </div>
       </div>
