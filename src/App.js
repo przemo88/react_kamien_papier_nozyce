@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Submit from './Submit';
-import Result from './Result';
+import SubmitInfo from './SubmitInfo';
+import ResultInfo from './ResultInfo';
 
 
 class App extends Component {
@@ -17,8 +17,6 @@ class App extends Component {
     console.log(this.props.id);
   }
 
-
-
   render() {
     return (
       <div>
@@ -29,10 +27,10 @@ class App extends Component {
         </div>
         <div className="board">
           <div className="submit_row">
-            <Submit id="kamien" onClick={this.test}></Submit>
-            <Submit id="papier" onClick={this.test}></Submit>
-            <Submit id="nozyce" onClick={this.test}></Submit>
-            <Result></Result>
+            <SubmitInfo id="papier" click={this.test}></SubmitInfo>
+            <SubmitInfo id="kamien" click={this.test}></SubmitInfo>
+            <SubmitInfo id="nozyce" click={this.test}></SubmitInfo>
+            <ResultInfo></ResultInfo>
           </div>
         </div>
       </div>

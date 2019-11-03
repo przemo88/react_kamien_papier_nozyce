@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Result extends Component {
+class ResultInfo extends Component {
 
 
     render(props) {
@@ -12,4 +12,4 @@ class Result extends Component {
     }
 }
 
-export default Result;
+export default ResultInfo;
