@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.scss';
-import Submit from './submit';
-import Result from './result';
+import Submit from './Submit';
+import Result from './Result';
 
 
-function App() {
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.test = this.test.bind(this);
+  }
+
+  test = (props) => {
+    //return <Result id={this.props.id}></Result>
+    console.log(this.props.id);
+  }
 
 
 
-
-  return (
-    <div>
-      <div className="board">
-        <div className="title_row">
-          <h1 className="title">Kamień, Papier, Nożyce</h1>
+  render() {
+    return (
+      <div>
+        <div className="board">
+          <div className="title_row">
+            <h1 className="title">Kamień, Papier, Nożyce</h1>
+          </div>
+        </div>
+        <div className="board">
+          <div className="submit_row">
+            <Submit id="kamien" onClick={this.test}></Submit>
+            <Submit id="papier" onClick={this.test}></Submit>
+            <Submit id="nozyce" onClick={this.test}></Submit>
+            <Result></Result>
+          </div>
         </div>
       </div>
-      <div className="board">
-        <div className="submit_row">
-          <Submit id="kamien"></Submit>
-          <Submit id="papier"></Submit>
-          <Submit id="nozyce"></Submit>
-          <Result></Result>
-        </div>
-      </div>
-    </div>
-  );
+    )
+
+  }
+
 }
 
 export default App;
