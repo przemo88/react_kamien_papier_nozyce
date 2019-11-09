@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { faHandPaper, faHandScissors, faHandRock } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 import SubmitInfo from './SubmitInfo';
 import ResultInfo from './ResultInfo';
@@ -9,13 +10,18 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.test = this.test.bind(this);
+    this.state = {
+      id: null,
+    }
+
+    this.choice = this.choice.bind(this);
   }
 
-  test = (id) => {
-    //return <Result id={this.props.id}></Result>
-    console.log('test');
-  }
+  choice = (id) => {
+    this.setState({
+      id,
+    });
+  };
 
   render() {
     return (
@@ -27,10 +33,10 @@ class App extends Component {
         </div>
         <div className="board">
           <div className="submit_row">
-            <SubmitInfo id="papier" click={this.test}></SubmitInfo>
-            <SubmitInfo id="kamien" click={this.test}></SubmitInfo>
-            <SubmitInfo id="nozyce" click={this.test}></SubmitInfo>
-            <ResultInfo id={this.test}></ResultInfo>
+            <SubmitInfo id="papier" icon={faHandPaper} click={this.choice}></SubmitInfo>
+            <SubmitInfo id="kamien" icon={faHandRock} click={this.choice}></SubmitInfo>
+            <SubmitInfo id="nozyce" icon={faHandScissors} click={this.choice}></SubmitInfo>
+            {this.state.id ? <ResultInfo id={this.state.id} /> : null}
           </div>
         </div>
       </div>
