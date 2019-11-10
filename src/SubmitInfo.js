@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from './submit.scss';
+import './submit.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function Submit({ id, click, icon }) {
-
+function Submit({ id, click, icon, disabled, action, loterry }) {
     return (
-        <button className="submit" onClick={() => click(id)}><FontAwesomeIcon className="icon" icon={icon}></FontAwesomeIcon></button>
+        <button className={action} onClick={() => click(id)} disabled={disabled}><FontAwesomeIcon className="icon" icon={icon} disabled={true}></FontAwesomeIcon></button>
     )
 }
 

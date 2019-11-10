@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { faHandPaper, faHandScissors, faHandRock } from '@fortawesome/free-solid-svg-icons';
+import { faHandPaper, faHandScissors, faHandRock, faGamepad } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 import SubmitInfo from './SubmitInfo';
 import ResultInfo from './ResultInfo';
+import StartInfo from './StartInfo';
 
 
 class App extends Component {
@@ -12,16 +13,39 @@ class App extends Component {
 
     this.state = {
       id: null,
+      click: false,
     }
 
     this.choice = this.choice.bind(this);
+    this.roundLimit = this.roundLimit.bind(this);
+    this.lottery = this.lottery.bind(this);
+    this.game = this.game.bind(this);
+  }
+
+  lottery = () => {
+    this.setState({
+      ran: Math.floor(Math.random() * 3 + 1),
+    })
   }
 
   choice = (id) => {
     this.setState({
       id,
     });
+    console.log(id)
   };
+
+  roundLimit = () => {
+    this.setState({
+      round: prompt("Podaj ilość rund potrzebnych do wygrania"),
+    })
+  }
+
+  game = (id) => {
+    this.choice(id);
+    this.lottery();
+  }
+
 
   render() {
     return (
@@ -33,10 +57,20 @@ class App extends Component {
         </div>
         <div className="board">
           <div className="submit_row">
-            <SubmitInfo id="papier" icon={faHandPaper} click={this.choice}></SubmitInfo>
-            <SubmitInfo id="kamien" icon={faHandRock} click={this.choice}></SubmitInfo>
-            <SubmitInfo id="nozyce" icon={faHandScissors} click={this.choice}></SubmitInfo>
-            {this.state.id ? <ResultInfo id={this.state.id} /> : null}
+            <SubmitInfo id="papier" icon={faHandPaper} click={this.game}
+              disabled={!this.state.round ? true : false}
+              action={!this.state.round ? "submit disable" : "submit enable"}></SubmitInfo>
+            <SubmitInfo id="kamień" icon={faHandRock} click={this.game}
+              disabled={!this.state.round ? true : false}
+              action={!this.state.round ? "submit disable" : "submit enable"}></SubmitInfo>
+            <SubmitInfo id="nożyce" icon={faHandScissors} click={this.game}
+              disabled={!this.state.round ? true : false}
+              action={!this.state.round ? "submit disable" : "submit enable"}></SubmitInfo>
+            <SubmitInfo id="gra" icon={faGamepad} click={this.roundLimit}
+              action={!this.state.round ? "submit enable" : "submit disable"}></SubmitInfo>
+            {this.state.id ? <ResultInfo id={this.state.id} round={this.state.round} ran={this.state.ran} /> : null}
+            {!this.state.round ? <StartInfo></StartInfo> : null}
+
           </div>
         </div>
       </div>
