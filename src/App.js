@@ -23,9 +23,29 @@ class App extends Component {
   }
 
   lottery = () => {
-    this.setState({
-      ran: Math.floor(Math.random() * 3 + 1),
-    })
+
+    var temp;
+
+    temp = Math.floor(Math.random() * 3 + 1);
+    console.log(temp);
+
+    if (temp === 1) {
+      this.setState({
+        ran: 'papier',
+      })
+    }
+
+    else if (temp === 2) {
+      this.setState({
+        ran: 'kamień',
+      })
+    }
+
+    else if (temp === 3) {
+      this.setState({
+        ran: 'nożyce',
+      })
+    }
   }
 
   choice = (id) => {
