@@ -1,4 +1,8 @@
-﻿This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+﻿LINK:
+
+https://przemo88.github.io/react_kamien_papier_nozyce/
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Gra kamień, papier, nożyce zrobiona za pomocą biblioteki react.
 
