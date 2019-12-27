@@ -43,6 +43,7 @@ class ResultInfo extends Component {
             alert('koniec gry');
             this.setState(({ roundLimit }) => ({
                 roundLimit: 0,
+
             }));
         }
     }
