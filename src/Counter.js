@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { faHandPaper, faHandScissors, faHandRock, faGamepad } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ResultInfo from "./ResultInfo";
+import GameInfo from "./GameInfo";
 import './Counter.scss';
 
 class Counter extends Component {
@@ -29,12 +28,11 @@ class Counter extends Component {
     };
 
     lottery = (event, temp, roundLimit, pcPoint, userPoint) => {
-        console.log(this.state.roundLimit);
+
         const users_choice = event.target.id;
         this.setState({ id: users_choice });
-        const PC_choice = ["paper", "stone", "scissors"][
-            Math.floor(Math.random() * 3)
-        ];
+
+        const PC_choice = ["paper", "stone", "scissors"][Math.floor(Math.random() * 3)];
         this.setState({ ran: PC_choice });
 
         if (
@@ -72,51 +70,65 @@ class Counter extends Component {
             }));
         }
     };
+
     render(props) {
         return (
             <>
                 <div className="board">
                     <div className="title_row">
-                        <h1 className="title">Kamień, Papier, Nożyce</h1>
+                        <h1 className="title">Paper, Stone, Scissors</h1>
                     </div>
                 </div>
 
                 <div className="board">
                     <div className="submit_row">
 
-                        <button onClick={this.game}>New Game</button>
+                        <button
+                            onClick={this.game}
+                            disabled={!this.state.roundLimit ? false : true}
+                            className={!this.state.roundLimit ? "green btn-game" : "red btn-game"}
+                        >
+                        </button>
+
                         <button
                             onClick={this.lottery}
                             id="paper"
                             disabled={!this.state.roundLimit ? true : false}
+                            className={!this.state.roundLimit ? "red btn-paper" : "green btn-paper"}
                         >
-                            paper
-
                         </button>
 
                         <button
                             onClick={this.lottery}
                             id="stone"
                             disabled={!this.state.roundLimit ? true : false}
+                            className={!this.state.roundLimit ? "red btn-stone" : "green btn-stone"}
                         >
-                            stone
-        </button>
+                        </button>
+
                         <button
                             onClick={this.lottery}
                             id="scissors"
                             disabled={!this.state.roundLimit ? true : false}
-
+                            className={!this.state.roundLimit ? "red btn-scissors" : "green btn-scissors"}
                         >
-                            scissors
                         </button>
+
+                    </div>
+
+                    {this.state.id ?
+
                         <ResultInfo
                             id={this.state.id}
+                            roundLimit={this.state.roundLimit}
                             ran={this.state.ran}
                             roundWinner={this.state.roundWinner}
                             userPoint={this.state.userPoint}
                             pcPoint={this.state.pcPoint}
-                        />
-                    </div>
+                        /> :
+
+                        <GameInfo></GameInfo>}
+
                 </div>
             </>
         );

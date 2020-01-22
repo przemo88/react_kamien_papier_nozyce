@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+
 body{
     margin:0;
     font-family: 'Roboto', sans-serif;
@@ -10,24 +11,69 @@ body{
 }
 
 @mixin row($h){
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     background-color: #A6E0FF;
     height: $h;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .title_row{
-    @include row(100px);
+    @include row(10vh);
 }
 
 .submit_row{
-    @include row(200px);
-
+    @include row(40vh);
+    padding-top: 100px;
 }
 
 .title{
     color:white;
     text-shadow:2px 2px black;
     margin: 0 auto;
+  }
+
+
+  .result{
+    @include row(50vh);
+    display: block;
+}
+
+  @mixin btn($content){
+      position: relative;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+
+      &:before{
+        font-family: 'FontAwesome';
+        font-size: 100px;
+        content: $content;
+      }
+  }
+
+  .btn-scissors{
+    @include btn("\f257");
+  }
+
+  .btn-stone{
+    @include btn("\f255");
+  }
+
+  .btn-paper{
+    @include btn("\f256");
+  }
+
+  .btn-game{
+    @include btn("\f11b");
+  }
+ 
+  .red{
+      background-color: red;
+  }
+
+  .green{
+      background-color: green;
   }

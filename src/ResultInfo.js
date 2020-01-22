@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import "./ResultInfo.scss";
 
 class ReactInfo extends Component {
     render(props) {
         return (
-            <>
-                <div>You choice: {`${this.props.id}`}</div>
-                <div>PC choice: {`${this.props.ran}`}</div>
-                <div>Round Winner: {`${this.props.roundWinner}`}</div>
-                <div>User Point: {`${this.props.userPoint}`}</div>
-                <div>PC Point: {`${this.props.pcPoint}`}</div>
-            </>
+            <div className="result">
+                <div className="info">Round Limit: <br></br> {`${this.props.roundLimit}`}</div>
+                <div className="info">You choice: <br></br> {`${this.props.id}`}</div>
+                <div className="info">PC choice: <br></br> {`${this.props.ran}`}</div>
+                <div className="info">Round Winner: <br></br> {`${this.props.roundWinner}`}</div>
+                <div className="info">User Point: <br></br> {`${this.props.userPoint}`}</div>
+                <div className="info">PC Point: <br></br> {`${this.props.pcPoint}`}</div>
+            </div >
         );
     }
 }
