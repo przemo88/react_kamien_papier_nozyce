@@ -1,3 +1,13 @@
+.result{
+    margin-top: 100px;
+}
+
+.left, .right{
+    display: flex;
+    justify-content: center;
+}
+
 .info{
     font-size: 20px;
-}
+    width: 100%;
+} 

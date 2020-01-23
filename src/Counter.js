@@ -71,12 +71,17 @@ class Counter extends Component {
         }
     };
 
+
+
     render(props) {
+
+
+
         return (
             <>
                 <div className="board">
                     <div className="title_row">
-                        <h1 className="title">Paper, Stone, Scissors</h1>
+                        <h1>Paper, Stone, Scissors</h1>
                     </div>
                 </div>
 
@@ -127,12 +132,16 @@ class Counter extends Component {
                             pcPoint={this.state.pcPoint}
                         /> :
 
-                        <GameInfo></GameInfo>}
+                        <GameInfo
+                            roundLimit={this.state.roundLimit}
+                        ></GameInfo>}
 
                 </div>
             </>
         );
     }
 }
+
+
 
 export default Counter;
