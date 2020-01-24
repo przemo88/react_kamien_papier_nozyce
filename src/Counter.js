@@ -17,8 +17,8 @@ class Counter extends Component {
             pcPoint: 0,
             roundLimit: 0,
             roundWinner: "",
-            showModal: "false",
-            endGame: "false"
+            showModal: false,
+            endGame: false
         };
 
         this.lottery = this.lottery.bind(this);
@@ -67,7 +67,7 @@ class Counter extends Component {
                 id: "",
                 ran: "",
                 roundWinner: "",
-                endGame: "true"
+                endGame: true
             }));
         }
     };
@@ -129,7 +129,7 @@ class Counter extends Component {
 
                         <ReactModal className="modal" isOpen={this.state.endGame}>
                             <button className="modal_btn" onClick={this.endGameModalClose}>X</button>
-                            <p className="modal_text">END GAME</p>
+                            <p className="modal_text">GAME OVER</p>
                         </ReactModal>
 
                         <button
@@ -178,7 +178,5 @@ class Counter extends Component {
         );
     }
 }
-
-
 
 export default Counter;
