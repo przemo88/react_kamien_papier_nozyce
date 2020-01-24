@@ -1,32 +1,33 @@
 import React, { Component } from "react";
+import ReactModal from "react-modal";
 import ResultInfo from "./ResultInfo";
 import GameInfo from "./GameInfo";
 import './Counter.scss';
+import './ReactModal.scss';
 
 class Counter extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            count: 0,
             ran: "",
             id: "",
             temp: Math.floor(Math.random() * 3 + 1),
             userPoint: 0,
             pcPoint: 0,
             roundLimit: 0,
-            roundWinner: ""
+            roundWinner: "",
+            showModal: "false",
+            endGame: "false"
         };
 
         this.lottery = this.lottery.bind(this);
-        this.game = this.game.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.endGameModalOpen = this.endGameModalOpen.bind(this);
+        this.endGameModalClose = this.endGameModalClose.bind(this);
     }
-
-    game = roundLimit => {
-        const round = prompt("Number of round");
-        this.setState({ roundLimit: parseInt(round) });
-    };
-
     lottery = (event, temp, roundLimit, pcPoint, userPoint) => {
 
         const users_choice = event.target.id;
@@ -59,23 +60,41 @@ class Counter extends Component {
                 }));
             }
         } else {
-            alert("end game");
             this.setState(({ pcPoint, userPoint }) => ({
                 pcPoint: 0,
                 userPoint: 0,
                 roundLimit: 0,
                 id: "",
                 ran: "",
-                roundWinner: ""
+                roundWinner: "",
+                endGame: "true"
             }));
         }
     };
 
+    handleChange(event) {
+        this.setState({ roundLimit: parseInt(event.target.value) });
+    }
 
+    handleOpenModal = () => {
+        this.setState({ showModal: true });
+    }
+
+    handleCloseModal = () => {
+        this.setState({ showModal: false });
+    }
+
+    endGameModalOpen = e => {
+        e.preventDefault();
+        this.setState({ endGame: true });
+
+    }
+
+    endGameModalClose = () => {
+        this.setState({ endGame: false });
+    }
 
     render(props) {
-
-
 
         return (
             <>
@@ -89,11 +108,29 @@ class Counter extends Component {
                     <div className="submit_row">
 
                         <button
-                            onClick={this.game}
+                            onClick={this.handleOpenModal}
                             disabled={!this.state.roundLimit ? false : true}
                             className={!this.state.roundLimit ? "green btn-game" : "red btn-game"}
                         >
                         </button>
+
+                        <ReactModal className="modal" isOpen={this.state.showModal}>
+                            <button className="modal_btn" onClick={this.handleCloseModal}>X</button>
+                            <p className="modal_text">Enter the number of rounds</p>
+                            <div className="modal_input">
+                                <input
+                                    className="modal_input"
+                                    type="number"
+                                    roundLimit={this.state.value}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </ReactModal>
+
+                        <ReactModal className="modal" isOpen={this.state.endGame}>
+                            <button className="modal_btn" onClick={this.endGameModalClose}>X</button>
+                            <p className="modal_text">END GAME</p>
+                        </ReactModal>
 
                         <button
                             onClick={this.lottery}

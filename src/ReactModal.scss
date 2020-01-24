@@ -1,0 +1,30 @@
+.modal{
+    position: absolute;
+    width: 25%;
+    height: 300px;
+    top: 25%;
+    left: 40%;
+    background-color: #A6E0FF;
+  }
+
+  .modal_btn{
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background-color: #A6E0FF;
+      color: black;
+      margin-top: 5%;
+      margin-left: 5%;
+  }
+
+  .modal_text{ 
+      text-align: center;
+      font-size: 25px;
+  }
+
+  .modal_input{
+      width: 50%;
+      margin-left: 25%;
+      height: 40px;
+  }
+
