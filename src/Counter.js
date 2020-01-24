@@ -12,13 +12,13 @@ class Counter extends Component {
         this.state = {
             ran: "",
             id: "",
-            temp: Math.floor(Math.random() * 3 + 1),
             userPoint: 0,
             pcPoint: 0,
             roundLimit: 0,
             roundWinner: "",
             showModal: false,
-            endGame: false
+            endGame: false,
+            gameWin: ""
         };
 
         this.lottery = this.lottery.bind(this);
@@ -60,6 +60,10 @@ class Counter extends Component {
                 }));
             }
         } else {
+
+            this.state.pcPoint > this.state.userPoint ? this.setState({ gameWin: "PC WIN THE GAME" }) : this.setState({ gameWin: "USER WIN THE GAME" })
+
+
             this.setState(({ pcPoint, userPoint }) => ({
                 pcPoint: 0,
                 userPoint: 0,
@@ -127,9 +131,10 @@ class Counter extends Component {
                             </div>
                         </ReactModal>
 
-                        <ReactModal className="modal" isOpen={this.state.endGame}>
+                        <ReactModal className="modal modal_end" isOpen={this.state.endGame}>
                             <button className="modal_btn" onClick={this.endGameModalClose}>X</button>
                             <p className="modal_text">GAME OVER</p>
+                            <p className="modal_text">{this.state.gameWin}</p>
                         </ReactModal>
 
                         <button

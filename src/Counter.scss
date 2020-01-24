@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-
 body{
     margin:0;
     font-family: 'Roboto', sans-serif;
@@ -73,3 +72,16 @@ body{
   .green{
       background-color: green;
   }
+
+
+  @media only screen and (max-width: 360px){ 
+ 
+    .btn-scissors, .btn-stone, .btn-paper, .btn-game{
+      margin-top: 50px;
+      width: 15vh;
+      height: 15vh;
+      &:before{
+        font-size: 2rem;
+    }
+  }
+}
