@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "przemo88/react_kamien_papier_nozyce/static/css/main.7eb150d7.chunk.css",
-    "main.js": "przemo88/react_kamien_papier_nozyce/static/js/main.e3bcdb42.chunk.js",
-    "main.js.map": "przemo88/react_kamien_papier_nozyce/static/js/main.e3bcdb42.chunk.js.map",
-    "runtime-main.js": "przemo88/react_kamien_papier_nozyce/static/js/runtime-main.0a92c478.js",
-    "runtime-main.js.map": "przemo88/react_kamien_papier_nozyce/static/js/runtime-main.0a92c478.js.map",
-    "static/js/2.ff0ed154.chunk.js": "przemo88/react_kamien_papier_nozyce/static/js/2.ff0ed154.chunk.js",
-    "static/js/2.ff0ed154.chunk.js.map": "przemo88/react_kamien_papier_nozyce/static/js/2.ff0ed154.chunk.js.map",
-    "index.html": "przemo88/react_kamien_papier_nozyce/index.html",
-    "precache-manifest.8866ffc4db5d51a90d04aa77e16f3415.js": "przemo88/react_kamien_papier_nozyce/precache-manifest.8866ffc4db5d51a90d04aa77e16f3415.js",
-    "service-worker.js": "przemo88/react_kamien_papier_nozyce/service-worker.js",
-    "static/css/main.7eb150d7.chunk.css.map": "przemo88/react_kamien_papier_nozyce/static/css/main.7eb150d7.chunk.css.map"
+    "main.css": "/react_kamien_papier_nozyce/static/css/main.90405171.chunk.css",
+    "main.js": "/react_kamien_papier_nozyce/static/js/main.e518ea7d.chunk.js",
+    "main.js.map": "/react_kamien_papier_nozyce/static/js/main.e518ea7d.chunk.js.map",
+    "runtime-main.js": "/react_kamien_papier_nozyce/static/js/runtime-main.bfbbb84c.js",
+    "runtime-main.js.map": "/react_kamien_papier_nozyce/static/js/runtime-main.bfbbb84c.js.map",
+    "static/css/2.a97b732a.chunk.css": "/react_kamien_papier_nozyce/static/css/2.a97b732a.chunk.css",
+    "static/js/2.aa629cfb.chunk.js": "/react_kamien_papier_nozyce/static/js/2.aa629cfb.chunk.js",
+    "static/js/2.aa629cfb.chunk.js.map": "/react_kamien_papier_nozyce/static/js/2.aa629cfb.chunk.js.map",
+    "index.html": "/react_kamien_papier_nozyce/index.html",
+    "precache-manifest.ccac65972393609136822952ac61ba2e.js": "/react_kamien_papier_nozyce/precache-manifest.ccac65972393609136822952ac61ba2e.js",
+    "service-worker.js": "/react_kamien_papier_nozyce/service-worker.js",
+    "static/css/2.a97b732a.chunk.css.map": "/react_kamien_papier_nozyce/static/css/2.a97b732a.chunk.css.map",
+    "static/css/main.90405171.chunk.css.map": "/react_kamien_papier_nozyce/static/css/main.90405171.chunk.css.map",
+    "static/media/font-awesome.min.css": "/react_kamien_papier_nozyce/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.0a92c478.js",
-    "static/js/2.ff0ed154.chunk.js",
-    "static/css/main.7eb150d7.chunk.css",
-    "static/js/main.e3bcdb42.chunk.js"
+    "static/js/runtime-main.bfbbb84c.js",
+    "static/css/2.a97b732a.chunk.css",
+    "static/js/2.aa629cfb.chunk.js",
+    "static/css/main.90405171.chunk.css",
+    "static/js/main.e518ea7d.chunk.js"
   ]
 }
